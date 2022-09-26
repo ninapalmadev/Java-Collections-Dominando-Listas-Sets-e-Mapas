@@ -1,6 +1,5 @@
 package br.com.alura;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,7 +8,6 @@ public class Curso {
 
 	private String nome;
 	private String instrutor;
-
 	private List<Aula> aulas = new LinkedList<Aula>();
 
 	public Curso(String nome, String instrutor) {
@@ -31,5 +29,14 @@ public class Curso {
 
 	public void adiciona(Aula aula) {
 		this.aulas.add(aula);
+	}
+
+	public int getTempoTotal() {
+		return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+	}
+
+	@Override
+	public String toString() {
+		return "[Curso: " + nome + ", tempo total: " + this.getTempoTotal() + ", aulas" + this.aulas + "]";
 	}
 }
