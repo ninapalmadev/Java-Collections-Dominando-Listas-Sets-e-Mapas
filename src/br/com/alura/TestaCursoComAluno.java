@@ -1,7 +1,5 @@
 package br.com.alura;
 
-import java.util.Set;
-
 public class TestaCursoComAluno {
 	public static void main(String[] args) {
 		Curso javaColecoes = new Curso("Dominando as colecoes do Java", "Paulo Silveira");
@@ -24,7 +22,14 @@ public class TestaCursoComAluno {
 			System.out.println(a);
 		});
 		
+		System.out.println("O aluno esta matriculado? " + javaColecoes.estaMatriculado(a1));
 		
+		Aluno nome = new Aluno("Madonna", 160858);
+		System.out.println("e este aluno esta matriculado? " + javaColecoes.estaMatriculado(nome));
+		
+		System.out.println("o a1 eh igual Madonna? " + a1.equals(nome));
+		
+		System.out.println("eh equals? " + (a1.hashCode() == nome.hashCode()));
 		
 	}
 }
